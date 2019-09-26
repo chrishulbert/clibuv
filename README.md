@@ -1,2 +1,3 @@
-# clibuv
-SwiftPM wrapper of libuv
+# CLibUV
+
+SwiftPM wrapper of libuv for Xcode 11
