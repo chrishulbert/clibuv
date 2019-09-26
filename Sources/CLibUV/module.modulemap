@@ -1,4 +1,4 @@
 module CLibUV [system] {
-  header "libuv.h"
+  header "CLibUV.h"
   export *
 }
