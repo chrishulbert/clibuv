@@ -3,17 +3,20 @@
 
 import PackageDescription
 
-// See https://github.com/apple/swift-evolution/blob/master/proposals/0208-package-manager-system-library-targets.md
+// See: https://github.com/modswift/CApache/blob/master/Package%40swift-5.swift
 let package = Package(
-    name: "LibUV",
-    products: [
-        .library(name: "LibUV", targets: ["LibUV"]),
-    ],
-    targets: [
-        .target(
-            name: "LibUV",
-            dependencies: ["CLibUV"]),
-        .systemLibrary(
-            name: "CLibUV")
-    ]
+  name: "CLibUV",
+
+  products: [
+      .library(name: "CLibUV", targets: ["CLibUV"]),
+  ],
+  targets: [
+      .systemLibrary(name: "CLibUV",
+          pkgConfig: "libuv",
+          providers: [
+              .brew(["libuv"]),
+              .apt(["libuv"]),
+          ]
+      )
+  ]
 )
